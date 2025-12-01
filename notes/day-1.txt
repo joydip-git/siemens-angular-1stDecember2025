@@ -189,8 +189,8 @@ JS internals:
 -------------------
 when any JS function is invoked (including the global function), JS runtime creates an instance for that function, known as function execution context (FEC), which contains 3 properties
 	'this' property: a property to hold reference of an object (which stores 'this' data of the function)
-	a property to hold reference to an object ( which stores local variables of the function)
-	a property to hold reference to an object ( which stores all the variables of the function's outer scope)
+	varobj property: a property to hold reference to an object (which stores local variables of the function)
+	scope property: a property to hold reference to an object (which stores all the variables of the function's outer scope)
 
 
 
