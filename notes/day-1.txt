@@ -121,7 +121,69 @@ background-color:'burlywood'
 		ii. id selector
 		iii. class selector
 
+HTML + CSS + JavaScript, DOM, JS engine
+JS Engine/Interpreter/compiler
 
+web app: 
+	-> runtime provided by the browser process 
+	-> JS engine (part of the browser compiles and executes the JS code)
+
+Different JS engines:
+Chrome: V8 
+firefox: Spidermonkey
+safari: JS Core (current version name: Indigo)
+
+
+out of the browser JS runtime:
+---------------------------------
+Node JS, Deno JS etc.
+
+JavaScript:
+--------------------
+loosely typed language
+JS does not offer any string typification
+data types: Boolean, string, number, object
+no strict type checking
+object based programming language, NOT object oriented
+OOP like features are made available through a different way, known as 'prototype based programming'
+objects in JS is just collection of keys/properties and their values
+
+TypeScript:
+--------------------
+NOT a loosely typed language, rather a strongly typed language and if not strongly typed, type inference is used to interpret the data type of any variable
+TS does offer any string typification
+data types: Boolean, string, number, object
+extra types: any, unknown, partial, readonly etc.
+strict type checking
+object based programming language, NOT object oriented
+OOP like features are made available through a different way, known as 'prototype based programming'
+objects in JS is just collection of keys/properties and their values
+
+2009
+Ryan Dahl created Node JS framework based on the JS engine V8
+
+2015 ECMA
+
+
+transapiler -> transformer + compiler
+
+TS to JS transpilation is done by TypeScript Compiler (tsc)
+
+command to install (local): npm i typescript -D
+	all the typescript related packages will be installed inside node_modules folders present inside the root of the app directory
+
+command to install (global): npm i typescript --location=global
+	all the typescript related packages will be installed inside node_modules folders present inside C:\Users\<uname>\AppData\Roaming\npm folder
+
+
+package.json file => maintains list of packages on which the current application depends
+>npm init --yes/-y
+
+package installation:
+	global installation (>npm install --location=global <package-name>)
+	local installation (>npm install <package-name>)
+		a. complete dependency (>npm install <package-name>)
+		b. development dependency (>npm install <package-name> -D)
 
 
 
