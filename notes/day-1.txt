@@ -98,6 +98,30 @@ index.html
 .jsx/.tsx => html + code
 .ts (code) + .html (template)
 
+web application hosting during development:
+--------------------------------------------------------
+application development server (app server): host the current web app using some port number (apart from 8080) and serve the static resources
+	- live server [add as plugin/extension in VS Code]
+	- lite server
+	- webpack dev server
+	- ts server etc.
+
+Hot Module Replacement (HMR) - keeping the browser in sync with the latest changes made in the hosted web app
+
+styling:
+-------------------
+css-property-name: value
+
+background-color:'burlywood'
+
+1. in-line with the element using 'style' attribute of the element
+2. out-line styling:
+	a. in the same HTML document using "style" tag
+		i. element selector
+		ii. id selector
+		iii. class selector
+
+
 
 
 

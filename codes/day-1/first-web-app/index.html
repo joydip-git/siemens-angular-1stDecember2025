@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- self-closing tag or empty tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!-- <script>
+        function callMe() {
+            window.alert('hello...')
+        }
+        function attacheParaEventHandler(){
+            var para = window.document.getElementById('textPara')
+            para.addEventListener('click', callMe)
+        }
+        window.addEventListener('DOMContentLoaded', attacheParaEventHandler)
+    </script> -->
+    <!-- <style>
+        /* h2,p {
+            background-color: burlywood;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace
+        } */
+
+        /* #textPara,
+        #mainHeader {
+            background-color: burlywood;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace
+        } */
+
+        .common-style {
+            background-color: burlywood;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace
+        }
+    </style> -->
+</head>
+
+<body>
+    <!-- <h2 style="background-color: burlywood;text-align: center;font-family: 'Courier New', Courier, monospace">Welcome to Web App</h2> -->
+    <h2 id="mainHeader" class="common-style">Welcome to Web App</h2>
+    <hr>
+    <!-- <p onclick="callMe()">Learning about Web App</p> -->
+    <p id="textPara" class="common-style">Learning about Web App</p>
+    <br>
+    <p id="secondPara">Anglar is JS/TS based front-end framework to create component based web application</p>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <!-- <script>
+        function callMe() {
+            window.alert('hello...')
+        }
+        var para = window.document.getElementById('textPara')
+        para.addEventListener('click', callMe)
+        //para.innerText="Learning Angular"
+        para.innerHTML="<b>Learning Angular</b>"
+    </script> -->
+</body>
+
+</html>
