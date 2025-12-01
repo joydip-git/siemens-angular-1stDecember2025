@@ -1,0 +1,104 @@
+Angular
+------------------------
+
+A. Installation and environment set up:
+---------------------------------------------
+s/w: Node JS
+1. nodejs.org
+	Current: 25
+	LTS: 24 (download)
+*alongside node package manager (NPM) is installed
+
+Node JS installation path: C:\Program Files\nodejs
+
+3rd party packages installed globally using NPM are placed into:
+C:\Users\<user-name>\AppData\Roaming\npm
+
+Node JS: JavaScript runtime
+
+2. Visual Studio Code (VS code)
+
+3. Command Line Interface (CLI) tool to create, build, run an Angular app: 
+	Angular CLI
+
+package: @angular/cli
+global installation command for Angular CLI using NPM is:
+
+a. installation command: >npm install @angular/cli --location=global
+b. uninstallation command: >npm uninstall @angular/cli --location=global
+c. check Angular CLI version: ng version
+
+installation path: C:\Users\<user-name>\AppData\Roaming\npm
+
+Angular Learning Curve:
+----------------------------------
+JavaScript
+TypeScript (superset of JS)
+Node JS
+JS based application ecosystem (compilers, bundlers etc.)
+component based web application
+
+Front-end frameworks/libraries:
+------------------------------------
+React JS, Angular, Vue JS etc.
+
+Backend frameworks/libraries:
+------------------------------------
+Express JS, Nest JS, Next JS (to build React app) etc.
+
+Introduction Angular:
+------------------------------------------------------------------------
+JS/TS based front-end framework to create component based web application
+Nice feature (data binding) to pass data from component code to the template to be displayed
+Nice feature (event binding) to invoke/bind an function written in code file with an event of a template control
+declarative programming style
+create application using MV-* architecture to separate logic/code
+ex: MV-C, MV-VM, MV-P 
+DI framework
+provides facilities to make HTTP requests
+provides routing system
+etc.
+
+
+component based web app architecture:
+-------------------------------------------
+
+contents
+--------------------------------------------
+header.html + header.js/ts
+<div>
+	<p>
+</div>
+
+footer.html + footer.js/ts
+<div>
+	<p>
+</div>
+
+card.html (view/design/template) + 	card.js/ts (code)
+----------------------------------------------------------
+<div (click)="onDivClick('hi')" >	name="joydip"
+	<p>{{name}}</p>			onDivClick(a:string){}
+</div>
+
+side-panel.html + side-panel.ts/js
+<div>
+	<p>
+</div>
+
+master page
+index.html
+<html>
+	<head>...
+	<body>
+		
+	</body>
+</html>
+
+.jsx/.tsx => html + code
+.ts (code) + .html (template)
+
+
+
+
+
