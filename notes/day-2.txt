@@ -1,0 +1,144 @@
+Angular:
+-----------------------
+component based framework
+
+Angular app is a series of components which are clubbed to create a complete app
+there is only one proper HTML file with all the required tags - Single Page Application (SPA)
+
+component = view/template/design + code
+
+Angular is NOT only about components. You can create the following assets:
+			code		annotation/decorators
+1. component		class		@Component({})
+2. service		class		@Injectable (optional)
+3. pipe			class		@Pipe
+4. directive		class		@Directive
+5. module		class		@NgModule({})
+
+Note: ONLY components do have a template 
+
+
+design/coding
+tooling - transpilers, bundler, module loaders, package.json file
+Angular CLI (ng)
+
+two approaches to create angular application
+	a. module based
+	b. standalone
+
+a. module based
+------------------------------------
+default module [root] -> class AppModule{}
+default component [root] -> class AppComponent{}
+
+feature modules:
+-----------------------
+products - 4
+cart	 - 2
+order	 - 3
+payment	 - 4
+delivery - 2
+account	 - 4
+
+class ProductModule{
+
+}
+
+2010
+Angular JS 1.0 -> 1.x
+
+2016
+Angular 2.0
+
+Angular 4
+
+Angular 
+
+2025 (November - V21)
+
+class CommonModule{
+}
+
+class NgIfDirective{
+}
+
+
+@NgModule decorator:
+-------------------------------
+
+@NgModule({
+  //register the services
+  providers: [],
+
+  //register the components, directives and pipes ONLY
+  declarations: [P1, C1, D1],
+  
+  //register feature modules of the app and built-in modules
+  imports: [DM],
+
+  //register the name of components, pipes, directives, feature modules (already registered with declarations and imports) that you must expose outside this module. it is a subset of what you have already registered with declarations and imports (NOT services).
+  exports: [P1,C1,D1,DM],
+
+  //mention the name of bootstrapper component(s) here (must be first registered with declarations or components from some other module, whereas the that module is registered with this module in imports)
+  bootstrap: []
+})
+
+components are exposed by Angular as custom HTML tag. Angular runtime takes care of understanding that custom HTML tag and then injects the corresponding component's template wherever the custom HTML tag has been used.
+
+Bootstrapper component(s): the component(s) whose template will be injected inside the index.html file by default when the app is loaded in the browser
+
+
+platformBrowser function:
+----------------------------------
+A factory function that returns a PlatformRef instance associated with browser service providers.
+
+PlatformRef:
+----------------------------
+The Angular platform is the entry point for Angular on a web page. 
+Each page has exactly one platform. 
+Services (such as reflection) which are common to every Angular application running on the page are bound in its scope.
+method: bootstrapModule(<root-module-name>) => loads the bootstrapper module (root) and using reflection extracts metadata about that module and then creates instance of it, loads associated registered assets...
+
+BrowserModule:
+-------------------
+Exports required infrastructure for all Angular apps. Included by default in all Angular apps created with the CLI new command. 
+It needs to be imported ONLY in the root module file (one time)
+Note: Re-exports CommonModule and ApplicationModule, making their exports and providers available to all apps.
+
+dehydrated page (without component design)
+
+	hydration -> creating the bootstrapper components and rendering their design in the index.html
+
+hydrated (component design is injected)
+
+bootstrapApplication(rootcomponent,config)
+----------------------------
+Bootstraps an instance of an Angular application (ApplicationRef type) and renders a standalone component as the application's root component.
+
+imports property of Component object:
+-------------------------------------------
+The imports property specifies the standalone component's template dependencies — those directives, components, and pipes that can be used within its template. Standalone components can import other standalone components, directives, and pipes as well as existing NgModules.
+
+
+Binding:
+-----------------
+a. data binding: to display some data from the component code in the component's template
+flow of data: from code to template
+
+i. interpolation
+syntax: <element attr={{class-prop-name}}> => converts the value of the property to string automatically before binding
+
+ii. property binding:
+syntax: <element [attr]="prop-name"> => does not convert the value of the property to string. used in numerical value binding, object binding (in case of form handling etc.)
+
+b. event binding: binding an event of an element in template to a method in component class code. to pass data from template to code.
+flow of data: from template to code.
+syntax: <element (event-name)="method-in-class()">
+
+change tracking or change notification
+
+
+
+
+
+

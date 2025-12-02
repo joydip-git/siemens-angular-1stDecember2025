@@ -1,0 +1,9 @@
+<h2>Welcome to Binding App {{name}}</h2>
+<br>
+<!-- <label for="txtName">Name: &nbsp;</label>
+<input id="txtName" type="text" value="{{data}}" [style.width.px]="width"> -->
+
+<label for="txtName">Name: &nbsp;</label>
+<!-- <input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event)"> -->
+
+<input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event.target.value)">
