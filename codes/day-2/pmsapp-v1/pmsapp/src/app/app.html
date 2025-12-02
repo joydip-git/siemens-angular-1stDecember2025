@@ -1,5 +1,5 @@
 <h2>List of Products</h2>
 <br>
-<!-- <app-product-filter></app-product-filter> -->
- <br>
-<app-product-list></app-product-list>
+<app-product-filter (filterTextChanged)="receiveUpdatedTextToFilter($event)"></app-product-filter>
+<br>
+<app-product-list [filterText]="textToFilter"></app-product-list>

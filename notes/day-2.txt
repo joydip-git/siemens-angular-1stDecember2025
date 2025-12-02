@@ -191,6 +191,10 @@ NG commands:
 ng generate/g: treats "src\app" as the root directory
 	component: ng g c [<path>/]component-name [--skip-tests]
 
+<element #filterInput (input)="method(filterInput.value)">
+
+const filterInput = document.getElementById("...")
+
 
 
 

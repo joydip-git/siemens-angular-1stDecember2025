@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { products } from '../../../repository/products';
 
 @Component({
@@ -9,4 +9,5 @@ import { products } from '../../../repository/products';
 })
 export class ProductList {
   productRecords = products
+  @Input() filterText = ''
 }
