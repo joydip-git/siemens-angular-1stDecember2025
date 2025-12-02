@@ -143,9 +143,58 @@ change tracking or change notification:
 -----------------------------------------
 A mechanism where Angular checks the changes in the property values and accordingly update everywhere the property data has been used, including the template
 
-$event => built-in property (object) which represents the event fired by user of a control/tag
-$event => Event object
+$event => built-in property (object) which represents the event related argument that was emitted when the event was fired by user of a control/tag
+$event => Event object/ some other value (whatever you are emitting when the event is fired)
 "target" => source of the event (any tag)
+
+
+passing data between components:
+-----------------------------------------
+a. when components are nested inside each other
+---------------------------------------------------
+	i. shallow nesting (immediate nesting)
+	------------------------------------------------
+
+		A. from parent to child: data binding
+		------------------------------------------
+		Note: declare a property in the child class code with @Input() decorator
+		bind the property with the parent data in the template of paremt component where the child component is nested
+
+	@Input():
+	--------------
+	Decorator that marks a class field as an input property and supplies configuration metadata. The input property is bound to a DOM property in the template. During change detection, Angular automatically updates the data property with the DOM property's value.
+	
+		B. from child to parent: event binding
+		-------------------------------------------
+		Note: declare a property in the child component and assign the property to an instance of EventEmitter<T> where T is the type of the data that you want emit when the event is fired
+		fire the event at an appropriate time and emit the value
+		in the parent template, where the child component is nested, handle that event of the child by attaching an event handler (method) from the parent component code
+	
+	EventEmitter: 
+	---------------
+	Use in components with the @Output directive to emit custom events synchronously or asynchronously, and register handlers for those events by subscribing to an instance.
+
+	@Output():
+	------------------
+	Decorator that marks a class field as an output property and supplies configuration metadata. The DOM property bound to the output property is automatically updated during change detection.
+
+	ii. deep nesting:
+	--------------------
+	TBD
+
+b. when components are NOT nested inside each other:
+-----------------------------------------------------------
+TBD
+
+NG commands:
+-----------------
+ng generate/g: treats "src\app" as the root directory
+	component: ng g c [<path>/]component-name [--skip-tests]
+
+
+
+
+
 
 
 

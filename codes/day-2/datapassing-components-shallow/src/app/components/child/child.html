@@ -1,0 +1,6 @@
+Data:{{data}}
+<br>
+<div>
+    <label for="txtData">Data:&nbsp;</label>
+    <input type="text" id="txtData" [value]="data" (input)="updateData(+$event.target.value)">
+</div>

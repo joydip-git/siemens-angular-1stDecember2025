@@ -1,0 +1,4 @@
+<h2>Parent component {{parentData}}</h2>
+<br>
+<h3>Child Component</h3>
+<app-child [data]="parentData" (dataChanged)="reciveUpdatedData($event)"></app-child>
