@@ -7,3 +7,36 @@
 <!-- <input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event)"> -->
 
 <input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event.target.value)">
+
+<br>
+<br>
+<!-- <ul *ngIf="numbers && numbers.length>0"> -->
+@if (numbers && numbers.length>0) {
+<ul>
+    <!-- <li *ngFor="let num of numbers">
+        {{num}}
+    </li> -->
+    @for (num of numbers; track $index) {
+    <li>{{$index}}:{{num}}</li>
+    }
+</ul>
+}
+@else {
+<span>No elements in the array</span>
+}
+
+<div>
+    <label for="txtChoice">Choice: &nbsp; </label>
+    <input type="text" id="txtChoice" [value]="choice" (input)="onChoiceEntered(+($event.target.value))">
+</div>
+@switch (choice) {
+    @case (1) {
+        <span>case 1</span>
+    }
+    @case (2) {
+        <span>case 2</span>
+    }
+    @default {
+        <span>enter prper choice</span>
+    }
+}

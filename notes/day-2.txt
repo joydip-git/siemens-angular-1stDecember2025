@@ -87,6 +87,8 @@ components are exposed by Angular as custom HTML tag. Angular runtime takes care
 
 Bootstrapper component(s): the component(s) whose template will be injected inside the index.html file by default when the app is loaded in the browser
 
+Modular approach:
+------------------------------
 
 platformBrowser function:
 ----------------------------------
@@ -111,6 +113,8 @@ dehydrated page (without component design)
 
 hydrated (component design is injected)
 
+Standalone approach
+-----------------------------------
 bootstrapApplication(rootcomponent,config)
 ----------------------------
 Bootstraps an instance of an Angular application (ApplicationRef type) and renders a standalone component as the application's root component.
@@ -135,7 +139,13 @@ b. event binding: binding an event of an element in template to a method in comp
 flow of data: from template to code.
 syntax: <element (event-name)="method-in-class()">
 
-change tracking or change notification
+change tracking or change notification: 
+-----------------------------------------
+A mechanism where Angular checks the changes in the property values and accordingly update everywhere the property data has been used, including the template
+
+$event => built-in property (object) which represents the event fired by user of a control/tag
+$event => Event object
+"target" => source of the event (any tag)
 
 
 
