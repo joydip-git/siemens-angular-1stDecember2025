@@ -1,6 +1,14 @@
 <span>Filter Text:{{filterTextValue}}</span>
 <br>
-@if (productRecords && productRecords.length>0) {
+@if(!isLoadingComplete){
+<span>Loadig...</span>
+}
+@else if (errorInfo!=='') {
+<span>{{errorInfo}}</span>
+}@else if(!productRecords ||productRecords.length===0){
+<span>no records found</span>
+}
+@else{
 <table>
     <thead>
         <tr>
@@ -23,7 +31,4 @@
         }
     </tbody>
 </table>
-}
-@else{
-<span>No Products</span>
 }
