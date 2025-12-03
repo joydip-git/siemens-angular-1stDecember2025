@@ -1,0 +1,9 @@
+<div>
+    <label for="txtFilter">Filter By Name: &nbsp;</label>
+    <input type="text" id="txtFilter" [value]="filterValue" (input)="updateFilterValue($event.target.value)">
+</div>
+
+<!-- <div>
+    <label for="txtFilter">Filter By Name: &nbsp;</label>
+    <input type="text" id="txtFilter" #filterInput [value]="filterValue" (input)="updateFilterValue(filterInput.value)">
+</div> -->

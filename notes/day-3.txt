@@ -27,7 +27,7 @@ use a token name different than the class name itself using "provide" property a
 
 @Inject(<token-name>) decorator:
 -----------------------------------------
-used with the parameter/argument of the constructor, NOT with anything else
+used with the parameter/argument of the constructor, NOT with anything else.
 
 In Angular every asset (component, service, directive, module, pipe) MUST be decorated with @Injectable() if you want DI of that asset
 
@@ -41,3 +41,29 @@ best practice (*Not mandatory) in case a service itself has internal dependency 
 
 If you are registering a service with default technique (providers:[ServiceName]) and using an interface for a service and while mentioning DI, use the interface as the data type of the constructor argument, Angular will throw compilation error (it will look for a token by the name of the interface) since interface name can't be used as token (since interface is exclusive feature of TS, not JS and when this TS code is transpiled into JS, interface code will not be transpiled, so there will be no token in JS code)
 
+
+data fetching from RESTful API server
+sending request via web socket
+reading data from file
+
+JS is single threaded and also JS does not have multi threading facility
+
+asynchronous
+
+synchronous
+main(){
+	add(12,13)
+	subtract(12,3)
+}
+
+Threading => Thread 
+Tasks
+
+
+component lifecycle:
+-------------------------------
+x	=> OnX	     => ngOnX
+--------------------------------------
+change	=> OnChanges => ngOnChanges(){}
+init	=> OnInit    => ngOnInit()
+destroy	=> OnDestroy => ngOnDestroy

@@ -1,0 +1,29 @@
+<span>Filter Text:{{filterTextValue}}</span>
+<br>
+@if (productRecords && productRecords.length>0) {
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (p of productRecords; track $index) {
+        <tr>
+            <td>
+                <img class="image-box" [src]="p.imageUrl" alt="NA">
+            </td>
+            <td>{{p.productName}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.starRating}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
+@else{
+<span>No Products</span>
+}

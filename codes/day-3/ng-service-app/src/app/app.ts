@@ -1,10 +1,11 @@
 import { Component, inject, Inject } from '@angular/core';
 import { DataService } from './services/data.service';
 import { IDataService } from './services/IDataService';
+import { Second } from "./second/second";
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Second],
   templateUrl: './app.html',
   styleUrl: './app.css',
   // providers: [
@@ -22,15 +23,20 @@ import { IDataService } from './services/IDataService';
   //providers: [DataService]
 })
 export class App {
-  
+
   names: string[] = []
+  show = false
+
+  toggle() {
+    this.show = !this.show
+  }
 
   //private readonly dataSvc: DataService;
   // constructor(dataSvc: DataService) {
   //   // this.dataSvc = new DataService()
   //   this.dataSvc = dataSvc
   // }
-  
+
   // private readonly dataSvc: IDataService;
   // constructor(@Inject('SVC_TOKEN') dataSvc: IDataService) {
   //   this.dataSvc = dataSvc
@@ -40,7 +46,7 @@ export class App {
   constructor(@Inject('SVC_TOKEN') private readonly dataSvc: IDataService) {
     //this.dataSvc = dataSvc
   }
-  
+
   // constructor() {
   //   this.dataSvc = inject(DataService)
   // }

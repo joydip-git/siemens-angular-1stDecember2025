@@ -16,3 +16,11 @@
   <span>No names</span>
 </div>
 }
+
+<br>
+<br>
+<button type="button" (click)="toggle()">{{show?'Hide':'Show'}}</button>
+<br>
+@if(show){
+<app-second></app-second>
+}
