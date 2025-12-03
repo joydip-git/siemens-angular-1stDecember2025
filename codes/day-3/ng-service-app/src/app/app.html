@@ -1,0 +1,18 @@
+<h2>Welome to Services</h2>
+<br>
+<button type="button" (click)="loadData()">Load Data</button>
+<br>
+@if (names && names.length>0) {
+<div>
+  <ol>
+    @for (name of names; track $index) {
+    <li>{{name}}</li>
+    }
+  </ol>
+</div>
+}
+@else {
+<div>
+  <span>No names</span>
+</div>
+}

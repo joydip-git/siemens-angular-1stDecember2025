@@ -1,4 +1,4 @@
-Initial task:
+Initial task: (binding)
 -----------------------------
 1. create an angular app: pmsapp (Standalone)
 
@@ -27,6 +27,16 @@ enhancement-1: (passing data between components)
 filter the products currently being displayed in the table in ProductList component by a filter text. the filter text will be entered in a text box. for this a separate component (ProductFilter) has to be created. then nest the component in App component. the value entered in the text box in the template of ProductFilter component should be passed to the ProductList component for the filtration.
 Note: no need to filter the product list based on the filter text right now. just make sure that the filter text is passed from ProductFilter to ProductList component.
 
+
+enhancement-3: (services)
+------------------------------------------------
+create a service "ProductService" with a method which will return the array from "products.ts" file 
+register the service with custom provider registration (using a custom string as token)
+dependency inject the service instance through the constructor of ProductList class
+call the service method to get the array of products and assign the same to the existing property of the class (in the constructor)
+
+app structure:
+---------------------------------
 app
 	products
 		components

@@ -1,0 +1,43 @@
+Services
+-------------------
+contain reusable piece of logic
+
+data access logic
+business logic
+sending HTTP request to RESTful API server application
+storage and state management of data
+etc.
+
+IoC => Inversion of Control
+IoC Container => to store the instances of the dependency factor (service)
+
+providers => 
+[
+	{
+		provide(token): DataService
+		useClass: DataService
+	}
+]
+equivalent to [DataService]
+register this provider ????
+
+custom provider registration:
+----------------------------------
+use a token name different than the class name itself using "provide" property and use "useClass" property to mention the class name
+
+@Inject(<token-name>) decorator:
+-----------------------------------------
+used with the parameter/argument of the constructor, NOT with anything else
+
+In Angular every asset (component, service, directive, module, pipe) MUST be decorated with @Injectable() if you want DI of that asset
+
+Injectable
+	- Component
+	- Directive
+	- Pipe
+	- NgModule
+
+best practice (*Not mandatory) in case a service itself has internal dependency that Angular needs to resolve and also for uniformity
+
+If you are registering a service with default technique (providers:[ServiceName]) and using an interface for a service and while mentioning DI, use the interface as the data type of the constructor argument, Angular will throw compilation error (it will look for a token by the name of the interface) since interface name can't be used as token (since interface is exclusive feature of TS, not JS and when this TS code is transpiled into JS, interface code will not be transpiled, so there will be no token in JS code)
+
