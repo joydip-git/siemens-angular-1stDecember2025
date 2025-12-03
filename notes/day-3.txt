@@ -105,7 +105,10 @@ all the methods are asynchronous and returns Observable object
 Reactive APIs -> https://www.reactivex.io
 An API for asynchronous programming with observable streams
 
-RxJS => Reactive Extensions to JavaScript
+RxJS 	=> Reactive Extensions to JavaScript
+website: rxjs.dev
+Rx.NET 	=> 
+RxJava 	=>
 
 
 
