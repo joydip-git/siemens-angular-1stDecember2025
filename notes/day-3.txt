@@ -64,6 +64,18 @@ component lifecycle:
 -------------------------------
 x	=> OnX	     => ngOnX
 --------------------------------------
-change	=> OnChanges => ngOnChanges(){}
+changes	=> OnChanges => ngOnChanges(){}
 init	=> OnInit    => ngOnInit()
 destroy	=> OnDestroy => ngOnDestroy
+
+ngOnChanges:
+--------------------
+A callback method that is invoked immediately after the default change detector has checked data-bound properties if at least one has changed, and before the view and content children are checked.
+note: this callback will be executed time and again the any of the data-bound properties of the child gets updated input
+good for: doing some operation based on fresh input every time,  such as fetching data every time from RESTful backend server based on new input from parent
+
+ngOnInit:
+------------------
+A callback method that is invoked immediately after the default change detector has checked the directive's data-bound properties "for the first time", and before any of the view or content children have been checked. 
+note: It is invoked only once when the directive/component is instantiated.
+good for: doing some operation which needs to be done ONLY one time, such as fetching data only one time from RESTful backend server

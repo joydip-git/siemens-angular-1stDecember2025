@@ -1,0 +1,20 @@
+<!-- <p>Name:{{person.name}}</p>
+<br>
+<p>Id:{{person.id}}</p>
+<br>
+<p>Salary:{{person.salary}}</p> -->
+
+<br>
+@if(selectedPerson){
+<div>
+    <label for="txtName">Name: &nbsp;</label>
+    <input type="text" id="txtName" [value]="selectedPerson.name">
+</div>
+<div>
+    <label for="txtSalary">Name: &nbsp;</label>
+    <input type="text" id="txtSalary" [value]="selectedPerson.salary">
+</div>
+}
+@else {
+<span>select a person to get the details</span>
+}

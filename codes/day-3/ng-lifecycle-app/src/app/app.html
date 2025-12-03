@@ -1,0 +1,17 @@
+<h2>Lifecycle</h2>
+<br>
+<button type="button" (click)="updatePerson()">Update</button>
+<br>
+<br>
+
+@for (p of people; track $index) {
+<ul>
+  <li (click)="setSelectedPerson(p.id)"><u>{{p.name}}</u></li>
+</ul>
+}
+<br>
+<button (click)="updateShow()">{{show?'Hide':'Show'}}</button>
+<br>
+@if(show){
+<app-child [person]="personInfo" [selectedId]="selectedPersonId"></app-child>
+}
