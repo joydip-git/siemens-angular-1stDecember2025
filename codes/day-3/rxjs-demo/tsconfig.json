@@ -1,0 +1,15 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "target": "es5",
+        "module": "commonjs",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "lib": [
+            "DOM",
+            "ES2022"
+        ]
+    }
+}

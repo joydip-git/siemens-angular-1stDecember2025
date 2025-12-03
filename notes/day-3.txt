@@ -79,3 +79,35 @@ ngOnInit:
 A callback method that is invoked immediately after the default change detector has checked the directive's data-bound properties "for the first time", and before any of the view or content children have been checked. 
 note: It is invoked only once when the directive/component is instantiated.
 good for: doing some operation which needs to be done ONLY one time, such as fetching data only one time from RESTful backend server
+
+Asynchronity in TS/JS:
+---------------------------
+JS is single threaded
+JS does not have any API to create multiple threads unlike any other programming languages such C#, Java, C++ etc.
+JS can take advantage of the environment (runtime).
+If that runtime offers multithreading then JS can take advantage of it and request the runtime to execute a method through separate thread of the runtime
+In JS, there is an API: Promise using which you can take advantage of the multithreading capability of runtime
+
+
+HTTP Requests:
+-----------------------
+HttpClient => built in service class [with built-in provider]
+methods:
+	get()	-> sends request via HTTP GET method to the backend
+	post()	-> sends request via HTTP POST method to the backend
+	put()	-> sends request via HTTP PUT method to the backend
+	delete()-> sends request via HTTP DELETE method to the backend
+	....
+
+all the methods are asynchronous and returns Observable object
+
+
+Reactive APIs -> https://www.reactivex.io
+An API for asynchronous programming with observable streams
+
+RxJS => Reactive Extensions to JavaScript
+
+
+
+
+
