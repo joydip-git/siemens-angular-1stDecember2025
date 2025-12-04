@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit, signal } from '@angular/core';
-import { ProductService } from '../../services/product.service';
+import { Component, Inject, Input, OnDestroy, OnInit, signal } from '@angular/core';
+//import { ProductService } from '../../services/product.service';
 import { PRODUCT_SERVICE_TOKEN } from '../../../config/constants';
 import { Product } from '../../../models/product';
 import { Subscription } from 'rxjs';
 import { ApiResponse } from '../../../models/api-response';
+import { IProductService } from '../../services/product-service.contract';
 
 @Component({
   selector: 'app-product-list',
@@ -23,7 +24,7 @@ export class ProductList implements OnInit, OnDestroy {
   @Input('filterText') filterTextValue = ''
   private fetchSubscription?: Subscription;
 
-  constructor(@Inject(PRODUCT_SERVICE_TOKEN) private readonly productSvc: ProductService) {
+  constructor(@Inject(PRODUCT_SERVICE_TOKEN) private readonly productSvc: IProductService) {
    
   }
 
