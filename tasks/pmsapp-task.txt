@@ -35,6 +35,13 @@ register the service with custom provider registration (using a custom string as
 dependency inject the service instance through the constructor of ProductList class
 call the service method to get the array of products and assign the same to the existing property of the class (in the constructor)
 
+enhancement-4: (fetch the products data from a backend server)
+--------------------------------------------------------------------
+update ProductService class and its method getProducts() to send an HTTP GET request to the supplied backend API server and pass the data through observable to ProductList component
+You have to change the ProductList component property (to which products array currently is assigned) in order to use signal()
+To map the response (JSON object { "message":"", "data": an object|an array of objects|null) you have to create another model
+
+
 app structure:
 ---------------------------------
 app
