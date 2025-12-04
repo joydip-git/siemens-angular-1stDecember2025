@@ -5,7 +5,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, signal
   selector: 'app-root',
   templateUrl: './app.html',
   styleUrl: './app.css',
-  //changeDetection: ChangeDetectionStrategy.Default
+  changeDetection: ChangeDetectionStrategy.OnPush
   //imports:[NgFor,NgIf]
 })
 export class App {
@@ -20,7 +20,7 @@ export class App {
   }
 
   constructor(private readonly detector: ChangeDetectorRef) {
-
+    this.detector.markForCheck()
   }
   detatchDetector() {
     this.detector.detach()
