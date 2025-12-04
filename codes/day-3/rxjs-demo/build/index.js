@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var rxjs_1 = require("rxjs");
 var storage_1 = require("./storage");
 //obs: Observable<number> = of(10)
 //consumer
@@ -17,6 +18,7 @@ var storage_1 = require("./storage");
 //obs.subscribe(numObserver)
 var subscription = storage_1.storage
     .storeObservable
+    .pipe((0, rxjs_1.filter)(function (num) { return num % 2 != 0; }), (0, rxjs_1.map)(function (num) { return num * 2; }))
     .subscribe({
     next: function (num) {
         console.log('got data ' + num);

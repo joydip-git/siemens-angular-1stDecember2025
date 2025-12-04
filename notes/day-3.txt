@@ -107,8 +107,16 @@ An API for asynchronous programming with observable streams
 
 RxJS 	=> Reactive Extensions to JavaScript
 website: rxjs.dev
-Rx.NET 	=> 
-RxJava 	=>
+
+Rx.NET 	=> API to work with .NET
+RxJava 	=> API to work with Java
+
+Fundamental Concepts of RxJS:
+----------------------------------
+Observable object, Observer object
+Subject object, BehaviorSubject object, ReplaySubject object
+operators (methods) like - of, map, filter etc. (inspired by JS array methods)
+etc.
 
 
 

@@ -1,4 +1,4 @@
-import { Subscription } from "rxjs";
+import { Subscription, map, filter } from "rxjs";
 import { storage } from "./storage";
 
 //obs: Observable<number> = of(10)
@@ -23,6 +23,14 @@ import { storage } from "./storage";
 const subscription: Subscription =
     storage
         .storeObservable
+        .pipe(
+            filter(
+                (num) => num % 2 != 0
+            ),
+            map(
+                (num) => num * 2
+            )
+        )
         .subscribe({
             next: (num) => {
                 console.log('got data ' + num);
@@ -46,7 +54,6 @@ setInterval(
 )
 
 //unsubscribe
-
 setTimeout(
     () => {
         subscription.unsubscribe()

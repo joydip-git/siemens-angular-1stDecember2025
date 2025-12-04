@@ -1,0 +1,18 @@
+@if(isFetchComplete()){
+@if(errorInfo()===''){
+@if(todos()!==undefined){
+<ul>
+    @for (todo of todos(); track $index) {
+    <li>task <b>{{todo.title}} </b> is &nbsp;{{todo.completed?' completed':'not completed'}}
+    </li>
+    }
+</ul>
+}@else {
+<span>No records</span>
+}
+}@else {
+<span>{{errorInfo()}}</span>
+}
+}@else {
+<span>Loading...</span>
+}
