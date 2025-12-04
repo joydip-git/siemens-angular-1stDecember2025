@@ -1,0 +1,49 @@
+<h2>Welcome to Binding App {{name}} && {{nameData()}}</h2>
+<br>
+<button type="button" (click)="detatchDetector()">Detach Detector</button>
+<br>
+<button type="button" (click)="attachDetector()">Attach Detector</button>
+<br>
+<!-- <label for="txtName">Name: &nbsp;</label>
+<input id="txtName" type="text" value="{{data}}" [style.width.px]="width"> -->
+<br>
+<label for="txtName">Name: &nbsp;</label>
+<!-- <input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event)"> -->
+
+<input id="txtName" type="text" [value]="name" [style.width.px]="width" (input)="onInput($event.target.value)">
+
+<br>
+<label for="txtNameData">Name Data: &nbsp;</label>
+<input id="txtNameData" type="text" [value]="nameData()" [style.width.px]="width"
+    (input)="onNameDataChanged($event.target.value)">
+<br>
+<!-- <ul *ngIf="numbers && numbers.length>0"> -->
+@if (numbers && numbers.length>0) {
+<ul>
+    <!-- <li *ngFor="let num of numbers">
+        {{num}}
+    </li> -->
+    @for (num of numbers; track $index) {
+    <li>{{$index}}:{{num}}</li>
+    }
+</ul>
+}
+@else {
+<span>No elements in the array</span>
+}
+
+<div>
+    <label for="txtChoice">Choice: &nbsp; </label>
+    <input type="text" id="txtChoice" [value]="choice" (input)="onChoiceEntered(+($event.target.value))">
+</div>
+@switch (choice) {
+@case (1) {
+<span>case 1</span>
+}
+@case (2) {
+<span>case 2</span>
+}
+@default {
+<span>enter prper choice</span>
+}
+}

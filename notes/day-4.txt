@@ -1,0 +1,44 @@
+Signals:
+-------------------------------
+a reactivity API in angular
+
+x = 200
+data=100
+updateData(){
+	this.data++
+}
+
+<p>{{data}}</p>
+<br>
+<p> {{x}}</p>
+
+const nameData =  signal<String>('Anil') => new WritableSignal('Anil')
+nameData.set('anl kumar')
+const name:string = nameData()
+
+class WritableSignal<T>
+{
+	private data:T;
+	constructor(data:T){
+		this.data=data
+	}
+	get Data(){
+	    return this.data
+	}
+	set Data(newData:T){
+		this.data = newData
+	}
+}
+
+ChangeDetectorRef (a built service class fo change detection):
+------------------------------------------------------------------
+Base class that provides change detection functionality. A change-detection tree collects all views that are to be checked for changes. Use the methods to add and remove views from the tree, initiate change-detection, and explicitly mark views as dirty, meaning that they have changed and need to be re-rendered.
+
+detatch() method:
+----------------------
+Detaches this view from the change-detection tree. A detached view is not checked until it is reattached. Use in combination with detectChanges() to implement local change detection checks.
+Detached views are not checked during change detection runs until they are re-attached, even if they are marked as dirty.
+
+detectChanges():
+----------------------
+Checks this view and its children. Use in combination with ChangeDetectorRef#detach to implement local change detection checks.
