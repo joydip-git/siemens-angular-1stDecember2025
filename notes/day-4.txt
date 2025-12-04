@@ -43,8 +43,14 @@ detectChanges():
 ----------------------
 Checks this view and its children. Use in combination with ChangeDetectorRef#detach to implement local change detection checks.
 
+mark()
 
-{ "message": "found records", "data":[{},{},..]}
+
+{ "message": "success message/error message", "data":[{},{},..]|{}|null}
+
+everything is dirty -> mark everything for rechecking
+
+
 
 
 

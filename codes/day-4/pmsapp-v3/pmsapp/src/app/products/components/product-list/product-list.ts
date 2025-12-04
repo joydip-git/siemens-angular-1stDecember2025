@@ -1,14 +1,16 @@
-import { Component, Inject, Input, OnDestroy, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input, OnDestroy, OnInit, signal } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { PRODUCT_SERVICE_TOKEN } from '../../../config/constants';
 import { Product } from '../../../models/product';
 import { Subscription } from 'rxjs';
+import { ApiResponse } from '../../../models/api-response';
 
 @Component({
   selector: 'app-product-list',
   imports: [],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductList implements OnInit, OnDestroy {
   //productRecords?: Product[];
@@ -22,7 +24,7 @@ export class ProductList implements OnInit, OnDestroy {
   private fetchSubscription?: Subscription;
 
   constructor(@Inject(PRODUCT_SERVICE_TOKEN) private readonly productSvc: ProductService) {
-
+   
   }
 
   ngOnInit(): void {
@@ -40,7 +42,7 @@ export class ProductList implements OnInit, OnDestroy {
 
     this.fetchSubscription =
       this.productSvc.getProducts().subscribe({
-        next: (apiResponse) => {
+        next: (apiResponse: ApiResponse<Product[]>) => {
           if (apiResponse.data !== null) {
             this.productRecords.set(apiResponse.data)
             this.isLoadingComplete.set(true)
