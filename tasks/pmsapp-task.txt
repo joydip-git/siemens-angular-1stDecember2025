@@ -42,6 +42,14 @@ You have to change the ProductList component property (to which products array c
 To map the response (JSON object { "message":"", "data": an object|an array of objects|null) you have to create another model
 cancel the subscription in the component before component destruction
 
+enhancement-5: (create a pipe to filter the products displayed in a table in the ProductList component template based on the filter text entered into the textbox in ProductFilter component and passed to the ProductList component via App component)
+--------------------------------------------------------------------
+create a pipe
+	the transform method should be able to accept the following two arguments:
+	1st: a product array (to be filtered)
+	2nd: the filter text ( by which the array will be filtered)
+	returns: a filtered array of products
+	logic: check which product names include the filter text
 
 app structure:
 ---------------------------------

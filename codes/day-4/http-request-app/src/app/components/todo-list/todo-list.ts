@@ -1,11 +1,13 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
-import { PostService } from '../../services/post.service';
+import { TodoService } from '../../services/todo.service';
 import { Subscription } from 'rxjs';
 import { Todo } from '../../models/todo';
+import { UpperCasePipe } from '@angular/common';
+import { StatusPipe } from '../../pipes/status.pipe';
 
 @Component({
   selector: 'app-todo-list',
-  imports: [],
+  imports: [UpperCasePipe, StatusPipe],
   templateUrl: './todo-list.html',
   styleUrl: './todo-list.css',
 })
@@ -17,7 +19,7 @@ export class TodoList implements OnInit, OnDestroy {
   isFetchComplete = signal(false)
   errorInfo = signal('')
 
-  constructor(private readonly _postSvc: PostService) {
+  constructor(private readonly _postSvc: TodoService) {
 
   }
 

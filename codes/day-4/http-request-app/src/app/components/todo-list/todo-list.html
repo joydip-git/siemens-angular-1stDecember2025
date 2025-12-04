@@ -3,7 +3,9 @@
 @if(todos()!==undefined){
 <ul>
     @for (todo of todos(); track $index) {
-    <li>task <b>{{todo.title}} </b> is &nbsp;{{todo.completed?' completed':'not completed'}}
+    <li>
+        <!-- task <b>{{todo.title|uppercase}} </b> is &nbsp;{{todo.completed|status}} -->
+        {{todo.completed|status:todo.title:todo.id.toString()}}
     </li>
     }
 </ul>

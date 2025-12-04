@@ -50,6 +50,20 @@ mark()
 
 everything is dirty -> mark everything for rechecking
 
+data transformation in Angular => using pipes
+-------------------------------------------------
+@Pipe({
+	name:'lowercase'
+})
+export class LowercasePipe{
+	transform(input:string,...args:string[]):string{
+		return input.length!==0?input.toLocalLowerCase():input;
+	}
+}
+
+{{todo.title|lowercase}} => new LowercasePipe().transform(todo.title)
+
+
 
 
 
