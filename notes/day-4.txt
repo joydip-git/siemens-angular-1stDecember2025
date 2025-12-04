@@ -64,6 +64,10 @@ export class LowercasePipe{
 {{todo.title|lowercase}} => new LowercasePipe().transform(todo.title)
 
 
+Routing:
+--------------------------
+Client-side routing
+
 
 
 

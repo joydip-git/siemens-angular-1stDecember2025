@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (p of productRecords(); track $index) {
+        @for (p of (productRecords()|filterProductPipe:filterTextValue); track $index) {
         <tr>
             <td>
                 <img class="image-box" [src]="p.imageUrl" alt="NA">
