@@ -14,7 +14,7 @@ export const appRoutes: Routes = [
         path: 'products',
         children: [
             {
-                path: 'all', component: ProductContainer
+                path: '', component: ProductContainer
             },
             {
                 path: 'view/:id', component: ProductDetail
