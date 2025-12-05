@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, signal } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Params } from '@angular/router';
 import { PRODUCT_SERVICE_TOKEN } from '../../../config/constants';
 import { IProductService } from '../../services/product-service.contract';
@@ -12,7 +12,7 @@ import { Product } from '../../../models/product';
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.css',
 })
-export class ProductDetail implements OnInit {
+export class ProductDetail implements OnInit, OnDestroy {
 
   private prodSubscription?: Subscription;
   product = signal<Product | undefined>(undefined)
@@ -23,6 +23,9 @@ export class ProductDetail implements OnInit {
     private currentRoute: ActivatedRoute,
     @Inject(PRODUCT_SERVICE_TOKEN) private prodSvc: IProductService
   ) {
+  }
+  ngOnDestroy(): void {
+    this.prodSubscription?.unsubscribe()
   }
 
   ngOnInit(): void {
@@ -48,7 +51,7 @@ export class ProductDetail implements OnInit {
               this.errorInfo.set(response.message)
             }
           },
-          error: (err) => { 
+          error: (err) => {
             this.product.set(undefined)
             this.isFetchComplete.set(true)
             this.errorInfo.set(err.message)

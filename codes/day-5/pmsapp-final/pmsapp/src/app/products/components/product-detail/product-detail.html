@@ -1,1 +1,21 @@
-<p>product-detail works!</p>
+@if(isFetchComplete()){
+@if(errorInfo()===''){
+@if(product()!==undefined){
+<div>
+    <span>Details of {{product()?.productName}}</span>
+    <br>
+    <br>
+    <button type="button" class="btn btn-primary">Edit</button>
+</div>
+}
+@else {
+<span>No product found</span>
+}
+}
+@else{
+<span>{{errorInfo()}}</span>
+}
+}
+@else {
+<span>Loading....</span>
+}
