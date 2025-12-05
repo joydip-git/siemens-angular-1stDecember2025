@@ -1,5 +1,5 @@
 import { Component, Inject, OnDestroy, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Params } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Params, Router } from '@angular/router';
 import { PRODUCT_SERVICE_TOKEN } from '../../../config/constants';
 import { IProductService } from '../../services/product-service.contract';
 import { Subscription } from 'rxjs';
@@ -21,15 +21,25 @@ export class ProductDetail implements OnInit, OnDestroy {
 
   constructor(
     private currentRoute: ActivatedRoute,
+    private router: Router,
     @Inject(PRODUCT_SERVICE_TOKEN) private prodSvc: IProductService
-  ) {
-  }
+  ) { }
+
   ngOnDestroy(): void {
     this.prodSubscription?.unsubscribe()
   }
 
   ngOnInit(): void {
     //this.currentRoute.params;
+    // this
+    //   .currentRoute
+    //   .params
+    //   .subscribe({
+    //     next: (allParams) => {
+    //       Number(allParams["id"])
+    //     }
+    // })
+
     const routeSnapshot: ActivatedRouteSnapshot = this.currentRoute.snapshot;
 
     const currentRouteParams: Params = routeSnapshot.params;
@@ -57,5 +67,9 @@ export class ProductDetail implements OnInit, OnDestroy {
             this.errorInfo.set(err.message)
           }
         })
+  }
+
+  gotToEdit() {
+    this.router.navigate(['/products/edit', this.product()?.productId])
   }
 }
