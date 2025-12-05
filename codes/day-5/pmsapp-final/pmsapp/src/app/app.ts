@@ -1,17 +1,12 @@
 import { Component } from '@angular/core';
-import { ProductList } from "./products/components/product-list/product-list";
-import { ProductFilter } from "./products/components/product-filter/product-filter";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ProductList, ProductFilter],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  textToFilter = ''
-  
-  receiveUpdatedTextToFilter(newFilterText: string) {
-    this.textToFilter = newFilterText    
-  }
+
 }
