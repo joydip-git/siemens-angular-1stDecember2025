@@ -29,7 +29,7 @@ pmsapp routes
 
 products:
 ------------------
-to view all the products	ProductContainer	products/all
+to view all the products	ProductContainer	products[/all]
 				[ProductFilter + ProductList]
 to view a single product	ProductDetail		products/view/:id
 

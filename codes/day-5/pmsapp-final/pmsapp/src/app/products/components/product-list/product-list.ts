@@ -6,10 +6,11 @@ import { Subscription } from 'rxjs';
 import { ApiResponse } from '../../../models/api-response';
 import { IProductService } from '../../services/product-service.contract';
 import { FilterProductPipePipe } from '../../pipes/filter-product.pipe-pipe';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
-  imports: [FilterProductPipePipe],
+  imports: [FilterProductPipePipe, RouterLink],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
   //changeDetection: ChangeDetectionStrategy.OnPush

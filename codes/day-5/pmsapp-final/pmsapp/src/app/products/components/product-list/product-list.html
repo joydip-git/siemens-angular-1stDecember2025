@@ -1,4 +1,4 @@
-<span>Filter Text:{{filterTextValue}}</span>
+<span>Products Filtered By :{{filterTextValue}}</span>
 <br>
 @if(!isLoadingComplete()){
 <span>Loadig...</span>
@@ -9,7 +9,7 @@
 <span>no product records found</span>
 }
 @else{
-<table>
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Image</th>
@@ -18,11 +18,12 @@
             <th>Rating</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-dark">
         @for (p of (productRecords()|filterProductPipe:filterTextValue); track $index) {
         <tr>
             <td>
-                <img class="image-box" [src]="p.imageUrl" alt="NA">
+                <img class="image-box" [src]="p.imageUrl" alt="NA" [routerLink]="['/products/view',p.productId]"
+                    [title]="p.productName">
             </td>
             <td>{{p.productName}}</td>
             <td>{{p.price}}</td>
