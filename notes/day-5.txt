@@ -7,7 +7,13 @@ Route => just a type to create a route [component, path,...]
 Routes => a type representing an array of Route objects
 
 ActivatedRoute => an object to store a navigation details of current route (built-in service class)
+Provides access to information about a route associated with a component that is loaded in an outlet. Use to traverse the RouterState tree and extract information from nodes.
+
 RouterState => holds a series of objects (ActivatedRoute) to maintain a details of every navigation (built-in service class)
+
+ActivatedRouteSnapshot:
+---------------------------
+Contains the information about a route associated with a component loaded in an outlet at a particular moment in time. ActivatedRouteSnapshot can also be used to traverse the router state tree.
 
 RouterOutlet => an outlet (context) where any routed component will be dynamically loaded (built-in component)
 RouterLink => acts like a hyperlink and helps you navigate to a route (built-in directive)
