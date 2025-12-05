@@ -5,8 +5,11 @@ import { AddProduct } from './products/components/add-product/add-product';
 import { EditProduct } from './products/components/edit-product/edit-product';
 import { Registration } from './auth/components/registration/registration';
 import { Login } from './auth/components/login/login';
+import { Home } from './common/components/home/home';
+import { PageNotFound } from './common/components/page-not-found/page-not-found';
 
 export const appRoutes: Routes = [
+    //product routes
     {
         path: 'products',
         children: [
@@ -24,6 +27,8 @@ export const appRoutes: Routes = [
             }
         ]
     },
+
+    //auth routes
     {
         path: 'auth',
         children: [
@@ -34,5 +39,16 @@ export const appRoutes: Routes = [
                 path: 'login', component: Login
             }
         ]
+    },
+
+    //common routes
+    {
+        path: 'home', component: Home
+    },
+    {
+        path: '', redirectTo: '/home', pathMatch: 'full'
+    },
+    {
+        path: '**', component: PageNotFound
     }
 ];

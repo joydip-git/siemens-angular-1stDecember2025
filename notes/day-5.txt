@@ -35,7 +35,10 @@ common:
 ------------------
 				DashBoard (will be nested inside App component)		
 home				Home			home
-default				Home			base route -> /home
+default				Home			redirection route
+		
+			http://localhost:4200 -> http://localhost:4200/home
+
 invalid route			PageNotFound		*
 
 auth:
