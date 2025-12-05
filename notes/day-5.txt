@@ -1,0 +1,41 @@
+Routing:
+-------------------
+client-side => routes help you to navigate to different components and load them dynamically in page through root component at the client side browser
+
+Routing engine => Router (a built-in service class)
+Route => just a type to create a route [component, path,...]
+Routes => a type representing an array of Route objects
+
+ActivatedRoute => an object to store a navigation details of current route (built-in service class)
+RouterState => holds a series of objects (ActivatedRoute) to maintain a details of every navigation (built-in service class)
+
+RouterOutlet => an outlet (context) where any routed component will be dynamically loaded (built-in component)
+RouterLink => acts like a hyperlink and helps you navigate to a route (built-in directive)
+
+1. create several routes
+2. add them in the Routes
+3. register with appconfig.ts file
+4. need to use an "outlet" in root component where these "routed" components can be dynamically loaded based on route change
+
+pmsapp routes
+
+products:
+------------------
+to view all the products	ProductHome		products/all
+				[ProductFilter + ProductList]
+to view a single product	ProductDetail		products/view/:id
+to add a single product		AddProduct		products/add
+to edit a single product	EditProduct		products/edit/:id
+
+common:
+------------------
+				DashBoard (will be nested inside App component)		
+home				Home			home
+default				Home			base route -> /home
+invalid route			PageNotFound		*
+
+auth:
+----------------------------
+register an user		Registration		auth/register
+login an user			Login			auth/login
+
