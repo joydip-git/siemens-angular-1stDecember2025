@@ -184,6 +184,9 @@ a. when components are nested inside each other
 
 b. when components are NOT nested inside each other:
 -----------------------------------------------------------
+routed components or the components are in different tree
+
+
 TBD
 
 NG commands:

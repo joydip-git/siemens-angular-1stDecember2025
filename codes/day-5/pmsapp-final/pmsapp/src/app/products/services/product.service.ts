@@ -32,6 +32,14 @@ export class ProductService implements IProductService {
 
   getProducts(): Observable<ApiResponse<Product[]>> {
     // return [...products]
+    // return this._http.get<ApiResponse<Product[]>>(
+    //   PRODUCT_API_URL,
+    //   {
+    //     headers: {
+    //       "Authorization":`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NjQ5MzQ4NjQsImV4cCI6MTc2NDkzNjA2NH0.7N1JKQyPRpXWGCo6q8Wp7NlZJXrMrilDEKgGleW6KU0`
+    //     }        
+    //   }
+    // )
     return this._http.get<ApiResponse<Product[]>>(PRODUCT_API_URL)
   }
 }
