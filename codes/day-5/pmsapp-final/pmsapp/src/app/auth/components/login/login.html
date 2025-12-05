@@ -1,1 +1,38 @@
-<p>login works!</p>
+<form [formGroup]="loginFrm" (submit)="submit()">
+    <div>
+        <label for="txtUserName" class="form-label mt-4">UserName: &nbsp;</label>
+        <input type="text" id="txtUserName" name="userid" formControlName="username" class="form-control">
+    </div>
+    <!--error display-->
+    <div>
+        @if(userName.touched && userName.invalid){
+        @if(userName.errors?.['required']){
+        <span>please enter email</span>
+        }
+        @else if(userName.errors?.['email']){
+        <span>please enter email in abc@def.com format</span>
+        }
+        }
+    </div>
+    <div>
+        <label for="txtPassword" class="form-label mt-4">Password: &nbsp;</label>
+        <input type="password" id="txtPassword" name="pwd" formControlName="password" class="form-control">
+    </div>
+    <div>
+        @if(passWord.touched && passWord.invalid){
+        @if(passWord.errors?.['required']){
+        <span>please enter password</span>
+        }
+        @else if(passWord.errors?.['password']){
+        <span>{{passWord.errors?.['password']}}</span>
+        }
+        }
+    </div>
+    <br>
+    <div style="text-align: center;">
+        <button type="submit" [disabled]="loginFrm.invalid" class="btn btn-primary">Login</button>
+    </div>
+</form>
+<div style="text-align: center;">
+   <a routerLink="/auth/register">Not Registered? Register Now.</a>
+</div>

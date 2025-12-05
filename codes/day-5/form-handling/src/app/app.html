@@ -1,0 +1,63 @@
+<!-- {{name()}} -->
+<!-- <input type="text" [value]="name" (input)="updateName($event.target.value)"> -->
+
+<!-- <input type="text" [value]="name()" (input)="name.set($event.target.value)"> -->
+
+<!-- <input type="text" name="firstName" id="txtNameData" [formControl]="emailCtrl">
+<br>
+@if(emailCtrl.touched && emailCtrl.invalid){
+@if(emailCtrl.errors?.['required']){
+<span>please enter email</span>
+}
+@else if(emailCtrl.errors?.['email']){
+<span>please enter email in abc@def.com format</span>
+}
+}
+<br>
+<input type="text" name="password" id="txtPwd" [formControl]="pwdCtrl">
+<br>
+@if(pwdCtrl.touched && pwdCtrl.invalid){
+@if(pwdCtrl.errors?.['required']){
+<span>please enter password</span>
+}
+@else if(pwdCtrl.errors?.['password']){
+<span>{{pwdCtrl.errors?.['password']}}</span>
+}
+}
+<br>
+<button (click)="call()" [disabled]="pwdCtrl.invalid || emailCtrl.invalid">Click</button> -->
+
+<form [formGroup]="loginFrm" (submit)="submit()">
+  <div>
+    <label for="txtUserName">UserName: &nbsp;</label>
+    <input type="text" id="txtUserName" name="userid" formControlName="username">
+  </div>
+  <!--error display-->
+  <div>
+    @if(userName.touched && userName.invalid){
+    @if(userName.errors?.['required']){
+    <span>please enter email</span>
+    }
+    @else if(userName.errors?.['email']){
+    <span>please enter email in abc@def.com format</span>
+    }
+    }
+  </div>
+  <div>
+    <label for="txtPassword">Password: &nbsp;</label>
+    <input type="password" id="txtPassword" name="pwd" formControlName="password">
+  </div>
+  <div>
+    @if(passWord.touched && passWord.invalid){
+    @if(passWord.errors?.['required']){
+    <span>please enter password</span>
+    }
+    @else if(passWord.errors?.['password']){
+    <span>{{passWord.errors?.['password']}}</span>
+    }
+    }
+  </div>
+  <div>
+    <button type="submit" [disabled]="loginFrm.invalid">Submit</button>
+  </div>
+</form>

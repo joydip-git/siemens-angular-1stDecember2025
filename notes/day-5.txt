@@ -60,3 +60,36 @@ auth:
 register an user		Registration		auth/register
 login an user			Login			auth/login
 
+
+Form data handling:
+---------------------------
+
+ReactiveFormsModule and "formControl" directive
+@Directive({
+	selector:'[formControl]'
+})
+export class FormControlDirective{
+}
+
+@NgModule({
+	declarations:[FormControlDirective],
+	exports:[FormControlDirective]
+})
+export class ReactiveFormsModule{
+}
+
+Validators:
+-------------------
+a function which should be used to validate a form control and MUST return an object with a property (any) or null
+
+function password(control: AbstractControl):ValidationErrors|null{
+	if(control.value.length <5 && control.value.length >10){
+		return {password: 'length should be between 5 and 10'}
+	}else
+		return null;
+}
+
+errors: {password: 'length should be between 5 and 10'}/null
+
+
+
